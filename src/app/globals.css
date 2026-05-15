@@ -328,3 +328,608 @@ body {
     padding: 30px;
   }
 }
+
+/* Amenities Page Styles */
+.amenities-hero {
+  height: 60vh;
+  min-height: 400px;
+  background-image: url('/assets/img/amenities/hero-amenities.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-top: 80px;
+}
+
+.attractions-hero {
+  height: 60vh;
+  min-height: 400px;
+  background-image: url('/assets/img/attractions/hero-attractions.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-top: 80px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay h1 {
+  color: white;
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  color: white;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.amenities-description, .attractions-description {
+  padding: 80px 0;
+  background: #fafafa;
+}
+
+.lead-text {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 30px;
+  font-family: var(--font-serif);
+}
+
+.amenities-description p, .attractions-description p {
+  color: #666;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Amenities Grid */
+.amenities-grid-section {
+  padding: 80px 0;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.amenity-card {
+  text-align: center;
+  padding: 40px 30px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.amenity-card:hover {
+  transform: translateY(-5px);
+}
+
+.amenity-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.amenity-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-family: var(--font-serif);
+}
+
+.amenity-card p {
+  color: #888;
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* Attractions Grid */
+.attractions-grid-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.attractions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.attraction-card {
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.attraction-card:hover {
+  transform: translateY(-5px);
+}
+
+.attraction-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.attraction-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.attraction-card:hover .attraction-image img {
+  transform: scale(1.05);
+}
+
+.attraction-info {
+  padding: 30px;
+}
+
+.attraction-info h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-family: var(--font-serif);
+}
+
+.attraction-info p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.btn-small {
+  display: inline-block;
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid #333;
+  color: #333;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-small:hover {
+  background: #333;
+  color: white;
+}
+
+/* CTA Sections */
+.amenities-cta, .attractions-cta {
+  background: #1a1a1a;
+  color: white;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.amenities-cta h2, .attractions-cta h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.attractions-cta p {
+  color: #999;
+  margin-bottom: 30px;
+}
+
+.amenities-cta .btn, .attractions-cta .btn {
+  border-color: white;
+  color: white;
+}
+
+.amenities-cta .btn:hover, .attractions-cta .btn:hover {
+  background: white;
+  color: #1a1a1a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 36px;
+  }
+  
+  .amenities-grid, .attractions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .amenities-description, .attractions-description {
+    padding: 50px 0;
+  }
+  
+  .lead-text {
+    font-size: 18px;
+  }
+}
+
+/* Hero Slideshow */
+.hero {
+  height: 100vh;
+  min-height: 700px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slide-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.slide-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.slide-dot.active {
+  background: white;
+  width: 30px;
+  border-radius: 5px;
+}
+
+/* Offers Slider */
+.offers-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.slider-nav:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.slider-nav.prev {
+  left: -60px;
+}
+
+.slider-nav.next {
+  right: -60px;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.slider-dot.active {
+  background: #333;
+  width: 25px;
+  border-radius: 4px;
+}
+
+.location-address {
+  margin-top: 30px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .slider-nav.prev {
+    left: 10px;
+  }
+  
+  .slider-nav.next {
+    right: 10px;
+  }
+  
+  .slider-nav {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+}
+
+
+
+/* =========================================
+   HERO SLIDESHOW
+========================================= */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+/* Slides */
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0;
+
+  /* Smooth cinematic zoom */
+  transform: scale(1.08);
+
+  transition:
+    opacity 1.8s ease-in-out,
+    transform 7s ease-out;
+
+  will-change: opacity, transform;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Overlay */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  z-index: 1;
+}
+
+/* Content */
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: white;
+
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 72px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero-content p {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 35px;
+
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+/* Button */
+
+.btn {
+  display: inline-block;
+
+  padding: 14px 36px;
+
+  background: transparent;
+  border: 2px solid white;
+
+  color: white;
+
+  text-decoration: none;
+
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease;
+}
+
+.btn:hover {
+  background: white;
+  color: #1a1a1a;
+}
+
+/* =========================================
+   SLIDER CONTROLS
+========================================= */
+
+.slide-controls {
+  position: absolute;
+
+  right: 40px;
+  bottom: 40px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  z-index: 10;
+}
+
+/* Dots */
+
+.slide-dot {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  cursor: pointer;
+
+  transition:
+    width 0.4s ease,
+    background 0.4s ease,
+    transform 0.3s ease;
+}
+
+.slide-dot:hover {
+  transform: scale(1.1);
+}
+
+.slide-dot.active {
+  width: 34px;
+  border-radius: 999px;
+  background: white;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 52px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 600px;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+    letter-spacing: 2px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    padding: 12px 28px;
+    font-size: 12px;
+  }
+
+  .slide-controls {
+    right: 20px;
+    bottom: 20px;
+    gap: 8px;
+  }
+
+  .slide-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .slide-dot.active {
+    width: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+}

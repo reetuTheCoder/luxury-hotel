@@ -3,38 +3,47 @@
 const rooms = [
   {
     name: 'Grand Belle Bleue',
-    description: '550 sq ft with marble detailing, fireplace, and curated artwork. French doors open to stunning city views.',
+    description: 'In the Grand Belle Bleue, time and texture converge. Rare compositions, marble and bronze detailing, and richly layered textiles shape a 550-square-foot environment that feels curated rather than styled. French doors, a mar…',
     image: '/assets/img/rooms-and-suites/image-2.jpeg'
   },
   {
     name: 'Demi Suite',
-    description: '350 sq ft private retreat with queen bed, writing desk, and glowing fireplace. Perfect for intimate stays.',
+    description: 'The 350-square-foot Demi Suite offers a private, art-filled retreat designed for those who prefer to disappear rather than perform. A queen bed, writing desk, and glowing fireplace create a residential rhythm, while curated…',
     image: '/assets/img/rooms-and-suites/image-3.jpeg'
   },
   {
     name: 'Grand Belle Terrace',
-    description: '550 sq ft art-forward suite with private terrace and outdoor fireplace. Designed by Dana Hollister.',
+    description: 'The 550-square-foot Grand Belle Terrace is a maximalist, art-forward suite conceived by Dana Hollister. French doors open to a private terrace with an outdoor fireplace, extending the interior’s layered textures and handmad…',
     image: '/assets/img/rooms-and-suites/image-4.jpeg'
   }
 ];
 
 export default function RoomsSection() {
-  const handleBookNow = () => {
-    alert('This is a demo. Booking functionality is not available.');
+  const handleViewDetails = (roomName) => {
+    alert(`This is a design demo. Details for ${roomName} would be shown here.`);
   };
 
   return (
     <section id="rooms" className="section">
       <div className="container">
-        <h2 className="section-title">Featured Rooms & Suites</h2>
+        <div className="section-subtitle">Featured</div>
+        <h2 className="section-title">Rooms & Suites</h2>
+        <p className="section-description">
+          Our 80 suites are each composed with a certain disregard for uniformity—layered with original artwork, 
+          fireplaces, rich textiles, and the comforts of a life well-lived.
+          <br /><br />
+          They feel like private residences suspended just far enough above West Hollywood to forget what you came from.
+        </p>
         <div className="rooms-grid">
           {rooms.map((room, index) => (
-            <div key={index} className="room-card">
-              <img src={room.image} alt={room.name} style={{ width: '100%', height: '300px', objectFit: 'cover' }} />
-              <h3>{room.name}</h3>
-              <p>{room.description}</p>
-              <div style={{ margin: '0 20px 20px 20px' }}>
-                <button onClick={handleBookNow} className="btn btn-dark">VIEW DETAILS</button>
+            <div key={index} className="room-card" onClick={() => handleViewDetails(room.name)}>
+              <div className="room-image">
+                <img src={room.image} alt={room.name} />
+              </div>
+              <div className="room-info">
+                <h3>{room.name}</h3>
+                <p>{room.description}</p>
+                <button className="btn btn-dark" style={{ marginTop: '15px' }}>VIEW DETAILS</button>
               </div>
             </div>
           ))}
