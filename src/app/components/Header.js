@@ -1,4 +1,6 @@
-"use client";
+'use client';
+
+import Link from 'next/link';
 
 export default function Header() {
   const handleBookNow = () => {
@@ -8,16 +10,16 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container">
-        <a href="/" className="logo">
+        <Link href="/" className="logo">
           LUXURY HOTEL
-        </a>
+        </Link>
         <nav className="nav-links">
-          <a href="#rooms">Rooms & Suites</a>
-          <a href="#offers">Offers</a>
-          <a href="#dining">Dining</a>
-          <a href="#amenities">Amenities</a>
-          <a href="#gallery">Gallery</a>
-           <a href="#attractions">Attractions</a>
+          <Link href="/rooms">Rooms & Suites</Link>
+          <Link href="/offers">Offers</Link>
+          <Link href="/dining">Dining</Link>
+          <Link href="/amenities">Amenities</Link>
+          <Link href="/gallery">Gallery</Link>
+          <Link href="/attractions">Attractions</Link>
           <button onClick={handleBookNow} className="book-btn">
             BOOK NOW
           </button>

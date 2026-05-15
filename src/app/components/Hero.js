@@ -1,22 +1,23 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import ReservationWidget from './ReservationWidget';
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Hero Images
+  // Hero Images from your public/assets/img/home directory
   const slides = [
-    '/assets/img/home/bannerImg1.jpg',
-    '/assets/img/home/bannerImg2.jpg',
-    '/assets/img/home/bannerImg3.jpg',
-    '/assets/img/home/bannerImg4.jpg',
-    '/assets/img/home/bannerImg5.jpg',
-    '/assets/img/home/bannerImg6.jpg',
-    '/assets/img/home/bannerImg7.jpg',
+    '/assets/img/home/image-10.jpeg',
+    '/assets/img/home/image-11.jpeg',
+    '/assets/img/home/image-12.jpeg',
+    '/assets/img/home/image-13.jpeg',
+    '/assets/img/home/image-14.jpeg',
+    '/assets/img/home/image-15.jpeg',
+    '/assets/img/home/image-16.jpeg',
   ];
 
-  // Auto Slide
+  // Auto Slide every 6 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -24,10 +25,6 @@ export default function Hero() {
 
     return () => clearInterval(timer);
   }, [slides.length]);
-
-  const handleReservation = () => {
-    alert('This is a design demo. Booking functionality is not active.');
-  };
 
   const goToSlide = (index) => {
     setCurrentSlide(index);
@@ -39,12 +36,8 @@ export default function Hero() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`hero-slide ${
-            index === currentSlide ? 'active' : ''
-          }`}
-          style={{
-            backgroundImage: `url(${slide})`,
-          }}
+          className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+          style={{ backgroundImage: `url(${slide})` }}
         />
       ))}
 
@@ -54,19 +47,23 @@ export default function Hero() {
       {/* Content */}
       <div className="hero-content">
         <h1>
-          Luxury Redefined
+          It's A Pleasure Doing<br />Pleasure With You
         </h1>
 
-        <p>
-          Experience timeless elegance and unforgettable stays
-        </p>
-
-        <button
-          onClick={handleReservation}
-          className="btn"
+        {/* Make a Reservation Button that scrolls to widget */}
+        <button 
+          onClick={() => {
+            document.querySelector('.reservation-widget')?.scrollIntoView({ 
+              behavior: 'smooth' 
+            });
+          }} 
+          className="btn hero-reservation-btn"
         >
           MAKE A RESERVATION
         </button>
+
+        {/* Reusable Reservation Widget */}
+        <ReservationWidget />
       </div>
 
       {/* Slider Controls */}
@@ -74,9 +71,7 @@ export default function Hero() {
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`slide-dot ${
-              index === currentSlide ? 'active' : ''
-            }`}
+            className={`slide-dot ${index === currentSlide ? 'active' : ''}`}
             onClick={() => goToSlide(index)}
           />
         ))}
