@@ -1,8 +1,8 @@
 {
-  "name": "gethotelai",
+  "name": "luxury-hotel",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://reetuTheCoder.github.io/gethotelai",
+  "homepage": "https://reetuTheCoder.github.io/luxury-hotel",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
