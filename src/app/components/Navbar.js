@@ -29,12 +29,12 @@ const Navbar = ({
       <div className={styles.logo}>
         <Image
           src="/getHoltelAiLogo.svg"
-          alt="GetHotelAI Logo"
+          alt="Luxary Logo"
           width={80}
           height={60}
           priority
         />
-        <h3>GetHotelAI</h3>
+        <h3>Luxary Hotel</h3>
       </div>
 
       {/* Desktop Nav */}
